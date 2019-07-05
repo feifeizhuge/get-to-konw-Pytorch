@@ -25,7 +25,10 @@ Note: 文档中还介绍了一个常用的函数[torch.view](https://pytorch.org
 #### 2.1.2 What is AUTOGRAD
 [第二个文档](https://pytorch.org/tutorials/beginner/blitz/autograd_tutorial.html#sphx-glr-beginner-blitz-autograd-tutorial-py)介绍了自动梯度，这应该是PyTorch这个框架的一个闪亮的特色，目前还是不太懂。
 文中介绍了一个简单的例子，就是`z=g(y), y=f(x)`, 通过`z.backward()`就相当于`out.backward(torch.tensor(1.))`, 可以自动的求之前算有运算的梯度，`d(out)/dx`可以通过`x.grad`求得。
+
 [一篇介绍Autograd的博客文章](https://blog.csdn.net/g11d111/article/details/83035270)
+
+[为什么需要zero_grad](https://stackoverflow.com/questions/48001598/why-do-we-need-to-call-zero-grad-in-pytorch)
 
 
 #### 2.1.3 Neural Network for LeNet
@@ -44,9 +47,16 @@ Note: 文档中还介绍了一个常用的函数[torch.view](https://pytorch.org
 * [conv2d](https://pytorch.org/docs/stable/nn.html?highlight=nn.conv2d#torch.nn.Conv2d)
 - [maxpool2d](https://pytorch.org/docs/stable/nn.html?highlight=maxpool#torch.nn.MaxPool2d)
 
+如何更新权重，也有函数模块`optimizer`,同时也有`loss function`,等
+
 其中有个特别的参数`dilation`,它叫做空洞卷积：
 * [这里](https://blog.csdn.net/hiudawn/article/details/84500648)有它的资料
 - 一篇不错的[译文](https://blog.csdn.net/g11d111/article/details/82350563)
 * [github上关于不同卷积知识的总结和动图演示](https://github.com/vdumoulin/conv_arithmetic)
 
 关于另一个参数padding，有博文指出并不是直接的补零而是bias，可以参考[这里](https://blog.csdn.net/g11d111/article/details/82665265)
+
+还有一个python的语法`super(Net, self).__init__()`, [什么是super](http://www.runoob.com/python/python-func-super.html)
+
+#### 2.1.4 Training a classifier
+[第四篇文档](https://pytorch.org/tutorials/beginner/blitz/cifar10_tutorial.html)向我们展示了如何训练一个图片分类器，训练的数据都是`Torchvision`已经拆分好了，如果以后自己用还要学习后续的`dataLoader`
