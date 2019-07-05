@@ -59,4 +59,4 @@ Note: 文档中还介绍了一个常用的函数[torch.view](https://pytorch.org
 还有一个python的语法`super(Net, self).__init__()`, [什么是super](http://www.runoob.com/python/python-func-super.html)
 
 #### 2.1.4 Training a classifier
-[第四篇文档](https://pytorch.org/tutorials/beginner/blitz/cifar10_tutorial.html)向我们展示了如何训练一个图片分类器，训练的数据都是`Torchvision`已经拆分好了，如果以后自己用还要学习后续的`dataLoader`
+[第四篇文档](https://pytorch.org/tutorials/beginner/blitz/cifar10_tutorial.html)向我们展示了如何训练一个图片分类器，训练的数据都是`Torchvision`已经拆分好了，如果以后用自己的数据，应该还要学习后续的`dataLoader`
